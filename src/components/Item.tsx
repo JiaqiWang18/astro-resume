@@ -14,14 +14,21 @@ const Item = ({ data }) => {
 
   const workPeriod = getDates(data.startDate, data.endDate);
 
+  const renderedDes = data.descriptions.map((des: string) => (
+    <li className="my-1">{des}</li>
+  ));
+
   return (
-    <div className="my-2">
+    <div className="my-3">
       <div className="text-xl">
         <span className="font-medium">{data.title},</span>{" "}
         <i className="font-light">{data.company}</i>
       </div>
       <div>
         <i className="text-gray-500">{workPeriod}</i>
+      </div>
+      <div className="ml-4">
+        <ul className="list-disc">{renderedDes}</ul>
       </div>
     </div>
   );

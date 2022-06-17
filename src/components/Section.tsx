@@ -1,9 +1,14 @@
 import Item from "./Item";
+import SkillItem from "./SkillItem";
 
 const Section = ({ sectionObj }) => {
-  const renderedItems = sectionObj.item.map((item) => (
-    <Item data={item.fields} />
-  ));
+  const renderedItems = sectionObj.item.map((item) =>
+    item.fields.skill ? (
+      <SkillItem data={item.fields} />
+    ) : (
+      <Item data={item.fields} />
+    )
+  );
 
   return (
     <div className="">
