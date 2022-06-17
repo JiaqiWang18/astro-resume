@@ -8,6 +8,7 @@ const data = await contentfulClient
   .getEntries({
     content_type: "section",
     include: 10,
+		order: "fields.order"
   })
   .then((entry) => entry)
   .catch(console.error) as any;
