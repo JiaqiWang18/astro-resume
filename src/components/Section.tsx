@@ -19,7 +19,7 @@ const Section = ({ sectionObj }) => {
           className="w-6 mr-2 self-start mt-1.5"
         ></object>
         <div className="w-full">
-          <div className="text-2xl text-slate-600">{sectionObj.name}</div>
+          <div className="text-2xl text-slate-600 my-2">{sectionObj.name}</div>
           <hr />
           {renderedItems}
         </div>

@@ -1,8 +1,6 @@
 import { constructMonthDate } from "../utils";
 
 const Item = ({ data }) => {
-  console.log(data);
-
   const getDates = (startDate: string, endDate: string) => {
     if (!startDate) {
       return "";
@@ -30,6 +28,7 @@ const Item = ({ data }) => {
       <div className="ml-4">
         <ul className="list-disc">{renderedDes}</ul>
       </div>
+      <hr className="mt-2" />
     </div>
   );
 };
