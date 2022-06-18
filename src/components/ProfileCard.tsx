@@ -1,6 +1,4 @@
 const ProfileCard = ({ data }) => {
-  console.log(data);
-
   const renderedSocials = data.socials.map((social) => (
     <div className="mx-2 cursor-pointer">
       <a href={social.fields.link}>
