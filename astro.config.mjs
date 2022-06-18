@@ -6,6 +6,5 @@ import tailwind from "@astrojs/tailwind";
 // https://astro.build/config
 export default defineConfig({
   integrations: [react(), tailwind()],
-  base: "astro-resume",
   site: "https://JiaqiWang18.github.io/",
 });
