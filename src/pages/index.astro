@@ -23,7 +23,7 @@ const profileData = await contentfulClient
   .catch(console.error) as any;
 
 ---
-<Layout title="Resume">
+<Layout title={`${profileData.items[0].fields.name}'s Resume'`}>
 	<main class="lg:flex justify-between mx-3 mt-3">
 		<div class="mb-3 lg:fixed lg:w-[20rem]">
 			<ProfileCard data={profileData.items[0].fields}/>
