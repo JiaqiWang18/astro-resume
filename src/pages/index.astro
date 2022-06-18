@@ -4,7 +4,7 @@ import ProfileCard from '../components/ProfileCard'
 import Resume from '../components/Resume'
 import { contentfulClient } from '../utils';
 
-const data = await contentfulClient
+const resumeData = await contentfulClient
   .getEntries({
     content_type: "section",
     include: 10,
@@ -13,15 +13,23 @@ const data = await contentfulClient
   .then((entry) => entry)
   .catch(console.error) as any;
 
+const profileData = await contentfulClient
+  .getEntries({
+    content_type: "profile",
+    include: 10,
+		limit: 1
+  })
+  .then((entry) => entry)
+  .catch(console.error) as any;
 
 ---
 <Layout title="Resume">
-	<main class="md:flex justify-between mx-3 mt-3">
-		<div class="basis-1/3 mb-3">
-			<ProfileCard />
+	<main class="lg:flex justify-between mx-3 mt-3">
+		<div class="mb-3 lg:fixed lg:w-[20rem]">
+			<ProfileCard data={profileData.items[0].fields}/>
 		</div>
-		<div class="w-full md:ml-3">
-			<Resume data={data.items} />
+		<div class="w-full lg:ml-[20.7rem]">
+			<Resume data={resumeData.items} />
 		</div>
 	</main>
 </Layout>

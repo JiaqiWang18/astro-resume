@@ -11,12 +11,12 @@ const Section = ({ sectionObj }) => {
   );
 
   return (
-    <div className="">
+    <div className="lg:ml-5 mt-5">
       <div className="flex">
         <object
           data={sectionObj.icon.fields.file.url}
           type="image/svg+xml"
-          className="w-6 mr-2 self-start mt-3"
+          className="w-6 self-start mt-3 lg:mr-5 mr-2"
         ></object>
         <div className="w-full">
           <div className="text-2xl text-slate-600 my-2">{sectionObj.name}</div>
